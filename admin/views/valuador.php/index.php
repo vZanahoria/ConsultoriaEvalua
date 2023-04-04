@@ -6,3 +6,4 @@
             <th scope="col">Departamento</th>
         </tr>
     </thead>
+</table>
