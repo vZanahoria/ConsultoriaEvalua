@@ -1,0 +1,16 @@
+#barra_superior{
+    text-align: center;
+
+}
+
+@media only screen and (max-height: 720px) {
+    img {
+      height: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 720px) {
+    img {
+      width: 100%;
+    }
+  }
