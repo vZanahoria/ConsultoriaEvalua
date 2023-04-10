@@ -9,83 +9,59 @@
 
 
   <div class="row " id=nav_superior>
-    <nav>
-      <div class="row">
-        <div class="col">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-light menu new_link navbar_color"
-            data-bs-theme="light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Constructora</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+    <div class="col-12">
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+      <nav class="navbar navbar-expand-lg navbar new_link menu navbar_color">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-5">
+                <a class="nav-link " href="contacto.html">Inicio</a>
+              </li>
+              <li class="nav-item px-5">
+                <a class="nav-link " href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item px-5">
+                <a class="nav-link " href="idioma.html">Ubicación</a>
+              </li>          
+              <li class="nav-item dropdown px-5">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Sobre Nosotros
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item px-5" href="mision.php">Misión</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Carreteras
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="carreteras.html">Nuestros Proyectos</a>
-                      </li>
-                      <li><a class="dropdown-item" href="intercambiador_autopistas.html">Intercambiador de
-                          Autopistas</a>
-                      </li>
-                      <li><a class="dropdown-item" href="viaducto_bicentenario.html">Viaducto Bicentenario</a>
-                      </li>
-                      <li><a class="dropdown-item" href="autovia.html">Autovía Cantábrico</a>
-                      </li>
-                    </ul>
+                  <li><a class="dropdown-item px-5" href="vision.php">Visión</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="ferrocarriles.html">Ferrocarriles</a>
+                  <li><a class="dropdown-item px-5" href="viaducto_bicentenario.html">Valores</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="puertos.html">Puertos</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Nosotros
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="contacto.html">Contáctanos</a>
-                      </li>
-                      <li><a class="dropdown-item" href="mision.html">Misión</a>
-                      </li>
-                      <li><a class="dropdown-item" href="vision.html">Visión</a>
-                      </li>
-                      <li><a class="dropdown-item" href="valores.html">Valores</a>
-                      </li>
-                      <li><a class="dropdown-item" href="mapa.html">Mapa</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="puertos.html">Login</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+                </ul>       
+              </li>
+              <li class="nav-item px-5">
+                <a class="nav-link " href="login.php">Login</a>
+              </li>
+            </ul>
+
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </div>
+
   <div class="col">
     <div id="imagen_banner">
-      <div class="contenedor_banner">
+      <div class="contenedor_banner new_link">
         <p id="txt_banner">Tu mejor opción</p>
         <p id="txt_banner">en avalúos</p>
         <p id="txt_banner">inmobiliarios.</p>
       </div>
     </div>
   </div>
-  
+
 </div>
