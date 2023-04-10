@@ -15,11 +15,13 @@
           <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-light menu new_link navbar_color"
             data-bs-theme="light">
             <div class="container-fluid">
+              <a class="navbar-brand" href="#">Constructora</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+
               <div class="collapse navbar-collapse" id="navbarSupportedContent1">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
@@ -76,11 +78,14 @@
       </div>
     </nav>
   </div>
-  <div class="row " id=banner>
-    <div class="col">
-      <div id="imagen_banner">
-        <h1 id="titulo" class="blanco centradotitulo">Grupo Constructor OHLA</h1>
+  <div class="col">
+    <div id="imagen_banner">
+      <div class="contenedor_banner">
+        <p id="txt_banner">Tu mejor opción</p>
+        <p id="txt_banner">en avalúos</p>
+        <p id="txt_banner">inmobiliarios.</p>
       </div>
     </div>
   </div>
+  
 </div>

@@ -37,6 +37,8 @@
     font-size: 16px;
   }
 
+
+
   .new_link{
     align-items: center;
     justify-content: space-between;
@@ -56,10 +58,29 @@
   }
 
   #imagen_banner{
-    background-image: url("../images/background_img.jpg"); /* The image used */
+    background-image: url("../images/background_img2.jpg"); /* The image used */
+    
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 500px; /* You must set a specified height */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
+
+#txt_banner{
+  font-weight: bold;
+  color: #004c00;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  transition: 0.2s ease all;
+  font-size: 20px;
+  
+}
+.contenedor_banner{
+  padding-top: 14%;
+  padding-right: 3%;
+}
+
