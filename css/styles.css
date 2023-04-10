@@ -1,7 +1,9 @@
 #barra_superior{
+  background-color: #3760AB;
     text-align: center;
-
+    padding: 10px;
 }
+
 
 @media only screen and (max-height: 720px) {
     img {
@@ -14,3 +16,50 @@
       width: 100%;
     }
   }
+
+  .menu {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu a {
+    padding: 10px;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s ease all;
+    font-size: 16px;
+  }
+
+  .new_link{
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 6px; /* para separar entre letras */
+    word-spacing: 90px;   /* separacion entre palabras */ 
+    line-height: 22px;   /* separacion entre lineas */ 
+    text-indent: 28px;   /* para sangrias */ 
+  }
+  
+  .menu a:hover  {
+    background: #000;
+    color: #fff;
+  }
+
+  .navbar_color{
+    background-color: #97B5E9!important;
+  }
+
+  #imagen_banner{
+    background-image: url("../images/background_img.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
