@@ -10,7 +10,7 @@ class Valuador extends Sistema{
             $data = $st->fetchAll();
         }
         else{
-            $sql = "select * from departamento where id_valuador=:id";
+            $sql = "select * from valuador where id_valuador=:id";
             $st = $this -> db->prepare($sql);
             $st -> bindParam(":id", $id, PDO::PARAM_INT);
             $st -> execute();
@@ -21,7 +21,7 @@ class Valuador extends Sistema{
     }
 
     public function edit($id, $data){
-        $this -> db;
+        $this -> db();
         $sql = "UPDATE valuador SET apellido_paterno =:apellido_paterno, apellido_materno =:apellido_materno, 
         nombre =:nombre, telefono=:telefono where id_valuador=:id";
         $st = $this ->db->prepare($sql);
@@ -29,6 +29,7 @@ class Valuador extends Sistema{
         $st->bindParam(":apellido_materno", $data['apellido_materno'], PDO::PARAM_STR);
         $st->bindParam(":nombre", $data['nombre'], PDO::PARAM_STR);
         $st->bindParam(":telefono", $data['telefono'], PDO::PARAM_STR);
+        $st->bindParam(":id" , $id,PDO::PARAM_INT);
         $st->execute();
         $rc = $st->rowCount();
         return $rc;
@@ -48,9 +49,10 @@ class Valuador extends Sistema{
 
     public function new($data){
         $this->db();
-        $sql = "INSERT INTO valuador (apellido_paterno, apellido_materno, nombre, telefono)
-        VALUES (:apellido_paterno, :apellido_materno, :nombre, :telefono)";
+        $sql = "call ins_valuador (:correo, :contrasena, :apellido_paterno, :apellido_materno, :nombre, :telefono)";
         $st = $this->db->prepare($sql);
+        $st -> bindParam(":correo", $data['correo'], PDO::PARAM_STR);
+        $st -> bindParam(":contrasena", $data['contrasena'], PDO::PARAM_STR);
         $st -> bindParam(":apellido_paterno", $data['apellido_paterno'], PDO::PARAM_STR);
         $st -> bindParam(":apellido_materno", $data['apellido_materno'], PDO::PARAM_STR);
         $st -> bindParam(":nombre", $data['nombre'], PDO::PARAM_STR);
