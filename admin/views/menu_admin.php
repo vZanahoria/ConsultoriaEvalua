@@ -16,6 +16,10 @@
             <li><a class="dropdown-item" href="clasificacion_uso_suelo.php">Clasificacion Uso de Suelo</a></li>
             <li><a class="dropdown-item" href="estado_avaluo.php">Estado Avaluo</a></li>
             <li><a class="dropdown-item" href="estado_pago.php">Estado Pago</a></li>
+            <li><a class="dropdown-item" href="estado_reclamacion.php">Estado Reclamación</a></li>
+            <li><a class="dropdown-item" href="estado_visita.php">Estado Visita</a></li>
+            <li><a class="dropdown-item" href="naturaleza_reclamacion.php">Naturaleza Reclamación</a></li>
+            <li><a class="dropdown-item" href="tipo_propiedad.php">Tipo Propiedad </a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
