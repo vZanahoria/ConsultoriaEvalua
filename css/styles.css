@@ -3,7 +3,18 @@
     text-align: center;
     padding: 10px;
 }
+#h2_color{
+  color: #004c00;
+}
 
+#imagen_contacto{
+  background-image: url("../images/atencion_contacto.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
 
 @media only screen and (max-height: 720px) {
     img {
