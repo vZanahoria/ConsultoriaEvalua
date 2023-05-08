@@ -1,6 +1,6 @@
 <?php
 include('controllers/sistema.php');
-include_once("views/header.php");
+include_once("views/header_admin.php");
 
 $action = (isset($_GET['action'])) ? $_GET['action'] : "login";
 
@@ -74,5 +74,5 @@ switch ($action) {
         break;
 
 }
-include_once("views/footer.php");
+include_once("views/footer_admin.php");
 ?>
