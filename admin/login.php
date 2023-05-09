@@ -64,7 +64,7 @@ switch ($action) {
             $data = $_POST;
             $login = $sistema->login($data['correo'], $data['contrasena']);
             if ($login) {
-                header("Location: index.php");
+                header("Location: index_admin.php");
             } else {
                 include_once('views/login/index.php');
             }
