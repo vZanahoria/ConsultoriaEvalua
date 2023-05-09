@@ -1,79 +1,61 @@
-    <div
-      class="bg-white p-5 rounded-5 text-secondary shadow"
-      style="width: 25rem"
-    >
-      <div class="d-flex justify-content-center">
-        <img
-          src="/assets/login-icon.svg"
-          alt="login-icon"
-          style="height: 7rem"
-        />
-      </div>
-      <div class="text-center fs-1 fw-bold">Login</div>
-      <div class="input-group mt-4">
-        <div class="input-group-text bg-info">
-          <img
-            src="/assets/username-icon.svg"
-            alt="username-icon"
-            style="height: 1rem"
-          />
+<style>
+    .divider:after,
+    .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+    }
+</style>
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="../images/draw2.svg" class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form method="POST" action="login.php?action=login">
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input name="correo" type="email" id="form1Example13" class="form-control form-control-lg" />
+                        <label class="form-label" for="form1Example13">Email address</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input name="contrasena" type="password" id="form1Example23"
+                            class="form-control form-control-lg" />
+                        <label class="form-label" for="form1Example23">Password</label>
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                        <a href="login.php?action=forgot">Forgot password?</a>
+                    </div>
+
+                    <!-- Submit button -->
+                    <input name="enviar" value="Ingresar" type="submit"
+                        class="btn btn-primary btn-lg btn-block"></button>
+
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                    </div>
+
+                    <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+                        role="button">
+                        <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+                    </a>
+                    <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
+                        role="button">
+                        <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+
+                </form>
+            </div>
         </div>
-        <input
-          class="form-control bg-light"
-          type="text"
-          placeholder="Username"
-        />
-      </div>
-      <div class="input-group mt-1">
-        <div class="input-group-text bg-info">
-          <img
-            src="/assets/password-icon.svg"
-            alt="password-icon"
-            style="height: 1rem"
-          />
-        </div>
-        <input
-          class="form-control bg-light"
-          type="password"
-          placeholder="Password"
-        />
-      </div>
-      <div class="d-flex justify-content-around mt-1">
-        <div class="d-flex align-items-center gap-1">
-          <input class="form-check-input" type="checkbox" />
-          <div class="pt-1" style="font-size: 0.9rem">Remember me</div>
-        </div>
-        <div class="pt-1">
-          <a
-            href="#"
-            class="text-decoration-none text-info fw-semibold fst-italic"
-            style="font-size: 0.9rem"
-            >Forgot your password?</a
-          >
-        </div>
-      </div>
-      <div class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm">
-        Login
-      </div>
-      <div class="d-flex gap-1 justify-content-center mt-1">
-        <div>Don't have an account?</div>
-        <a href="#" class="text-decoration-none text-info fw-semibold"
-          >Register</a
-        >
-      </div>
-      <div class="p-3">
-        <div class="border-bottom text-center" style="height: 0.9rem">
-          <span class="bg-white px-3">or</span>
-        </div>
-      </div>
-      <div
-        class="btn d-flex gap-2 justify-content-center border mt-3 shadow-sm"
-      >
-        <img
-          src="/assets/google-icon.svg"
-          alt="google-icon"
-          style="height: 1.6rem"
-        />
-        <div class="fw-semibold text-secondary">Continue with Google</div>
-      </div>
     </div>
+</section>
