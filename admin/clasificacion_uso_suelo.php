@@ -3,10 +3,14 @@ require_once("controllers/clasificacion_uso_suelo.php");
 include_once("views/header_admin.php");
 include_once("views/menu_admin.php");
 
+$usosuelo->validateRol('Administrador');
+
 $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $usosuelo->validatePrivilegio('Uso Suelo Leer');
+
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $usosuelo->new($data);
@@ -23,6 +27,8 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $usosuelo->validatePrivilegio('Uso Suelo Actualizar');
+
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_clasificacion_uso'];
@@ -42,6 +48,8 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $usosuelo->validatePrivilegio('Uso Suelo Eliminar');
+
         $cantidad = $usosuelo->delete($id);
         if ($cantidad) {
             $usosuelo->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +63,8 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $usosuelo->validatePrivilegio('Uso Suelo Leer');
+
         $data = $usosuelo->get(null);
         include("views/clasificacion_uso_suelo/index.php");
         break;

@@ -139,7 +139,7 @@ class Sistema{
     public function forgot($destinatario, $token)
     {
         if ($this->validateEmail($destinatario)) {
-            require '../../vendor/autoload.php';
+            require '../vendor/autoload.php';
             $mail = new PHPMailer();
             $mail->isSMTP();
             $mail->SMTPDebug = SMTP::DEBUG_OFF;
@@ -148,7 +148,7 @@ class Sistema{
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->SMTPAuth = true;
             $mail->Username = '20030853@itcelaya.edu.mx';
-            $mail->Password = 'tconvjrrlnbsjzpa';
+            $mail->Password = 'rfzygnjdcteacgju';
             $mail->setFrom('20030853@itcelaya.edu.mx', 'Cesar Garcia Hernandez');
             $mail->addAddress(utf8_decode($destinatario), 'Sistema Consultoria Evalua');
             $mail->Subject = utf8_decode('Recuperación de contraseña');
@@ -160,9 +160,9 @@ class Sistema{
             $mensaje = utf8_decode($mensaje);
             $mail->msgHTML($mensaje);
             if (!$mail->send()) {
-                //echo 'Mailer Error: ' . $mail->ErrorInfo;
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-                //echo 'Message sent!';
+                echo 'Message sent!';
             }
             function save_mail($mail)
             {
@@ -246,6 +246,21 @@ class Sistema{
             }
         }
         return $cantidad;
+    }
+    public function beginTransaction()
+    {
+        $this->db();
+        $this->db->beginTransaction();
+    }
+
+    public function rollBack()
+    {
+        $this->db->rollBack();
+    }
+
+    public function commit()
+    {
+        $this->db->commit();
     }
 }
 $sistema = new Sistema();
