@@ -176,5 +176,5 @@ switch ($action) {
         $data = $usuario->get(null);
         include("views/usuario/index.php");
 }
-include("views/footer.php");
+include("views/footer_admin.php");
 ?>

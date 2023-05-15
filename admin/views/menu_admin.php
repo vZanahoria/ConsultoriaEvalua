@@ -29,12 +29,25 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gestión
+            Gestión de Usuarios
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="usuario.php">Usuario</a></li>
-            <li><a class="dropdown-item" href="clasificacion_uso_suelo.php">Rol</a></li>
-            <li><a class="dropdown-item" href="estado_avaluo.php">Privilegio</a></li>
+            <li><a class="dropdown-item" href="rol.php">Rol</a></li>
+            <li><a class="dropdown-item" href="privilegio.php">Privilegio</a></li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gestión de Locaciones
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="localidad.php">Localidad</a></li>
+            <li><a class="dropdown-item" href="municipio.php">Municipio</a></li>
+            <li><a class="dropdown-item" href="estado.php">Estado</a></li>
               <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
