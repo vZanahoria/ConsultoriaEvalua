@@ -1,8 +1,8 @@
-<h1 class="text-center">Proyectos</h1>
+<h1 class="text-center">Municipio</h1>
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-            <p><a class="btn btn-success" href="proyecto.php?action=new" role="button">Ingresar un proyecto nuevo</a>
+            <p><a class="btn btn-success" href="municipio.php?action=new" role="button">Ingresar un municipio nuevo</a>
             </p>
         </div>
     </div>
@@ -12,49 +12,31 @@
             <table class="table table-responsive table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">nombre del proyecto</th>
-                        <th scope="col">departamento</th>
-                        <th scope="col">descripción</th>
-                        <th scope="col">fecha de inicio</th>
-                        <th scope="col">fecha de fin</th>
-                        <th scope="col">archivo</th>
-                        <th scope="col">operación</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Municipio</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $nReg = 0;
-                    foreach ($data as $key => $proyecto):
+                    foreach ($data as $key => $municipio):
                         $nReg++; ?>
                         <tr>
                             <td>
-                                <?php echo $proyecto["proyecto"] ?>
+                                <?php echo $municipio["id_municipio"] ?>
                             </td>
                             <td>
-                                <?php echo $proyecto["departamento"] ?>
+                                <?php echo $municipio["municipio"] ?>
                             </td>
                             <td>
-                                <?php echo $proyecto["descripcion"] ?>
-                            </td>
-                            <td>
-                                <?php echo $proyecto["fecha_inicio"] ?>
-                            </td>
-                            <td>
-                                <?php echo $proyecto["fecha_fin"] ?>
-                            </td>
-
-                            <td>
-                                <?php echo $proyecto["archivo"] ?>
+                                <?php echo $municipio["estado"] ?>
                             </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a target="_blank"
-                                        href="reporte.php?action=proyecto&id=<?php echo $proyecto["id_proyecto"] ?>"
-                                        type="button" class="btn btn-warning">Imprimir</a>
-                                    <a href="proyecto.php?action=task&id=<?php echo $proyecto["id_proyecto"] ?>"
-                                        type="button" class="btn btn-dark">Tareas</a>
-                                    <a href="proyecto.php?action=edit&id=<?php echo $proyecto["id_proyecto"] ?>"
+                                    <a href="municipio.php?action=edit&id=<?php echo $municipio["id_municipio"] ?>"
                                         type="button" class="btn btn-primary">Modificar</a>
-                                    <a href="proyecto.php?action=delete&id=<?php echo $proyecto["id_proyecto"] ?>"
+                                    <a href="municipio.php?action=delete&id=<?php echo $municipio["id_municipio"] ?>"
                                         type="button" class="btn btn-danger">Eliminar</a>
                                 </div>
                             </td>
