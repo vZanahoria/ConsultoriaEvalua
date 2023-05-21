@@ -7,16 +7,16 @@ class Municipio extends Sistema
     {
         $this->db();
         if (is_null($id)) {
-            $sql = "select m.municipio from estado as e left join municipio m 
-            on e.id_estado = m.id_estado";
+            $sql = "select m.municipio, m.id_municipio, e.estado from estado as e left join municipio m 
+            on e.id_estado = m.id_estado order by m.id_municipio";
             $st = $this->db->prepare($sql);
             $st->execute();
             $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
-            $sql = "select m.municipio
+            $sql = "select m.municipio, m.id_municipio, e.estado
             from estado as e
             left join municipio m on e.id_estado = m.id_estado
-            where e.id_estado=:id";
+            where e.id_estado=:id order by m.id_municipio";
             $st = $this->db->prepare($sql);
             $st->bindParam(":id", $id, PDO::PARAM_INT);
             $st->execute();

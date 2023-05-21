@@ -1,5 +1,6 @@
 <?php
 require_once("controllers/localidad.php");
+require_once("controllers/municipio.php");
 include_once("views/header_admin.php");
 include_once("views/menu_admin.php");
 
@@ -7,6 +8,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $dataMunicipios = $municipio->get(null);
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $localidad->new($data);
@@ -23,6 +25,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $dataMunicipios = $municipio->get(null);
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_localidad'];
