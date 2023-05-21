@@ -10,17 +10,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <button class="btn btn-dark">
+                            <button class="btn btn-dark" onclick="location.href='usuario.php'">
                                 <img src="../images/usuario.png" width="200px">
                                 </br>
                                 <h4>Usuarios</h4>
                             </button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-dark" onclick="location.href='../clientes/Clientes.php?N=C'">
+                            <button class="btn btn-dark" onclick="location.href='cliente.php'">
                                 <img src="../images/clientes.png" width="200px">
                                 </br>
-                                <h4>Solicitantes</h4>
+                                <h4>Clientes</h4>
                             </button>
                         </div>
                         <div class="col">
