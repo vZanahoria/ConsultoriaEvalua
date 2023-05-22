@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="valuador.php">Valuador</a></li>
             <li><a class="dropdown-item" href="clasificacion_uso_suelo.php">Clasificacion Uso de Suelo</a></li>
+            <li><a class="dropdown-item" href="conservacion_propiedad.php">Conservación Propiedad</a></li>
             <li><a class="dropdown-item" href="estado_avaluo.php">Estado Avaluo</a></li>
             <li><a class="dropdown-item" href="estado_pago.php">Estado Pago</a></li>
             <li><a class="dropdown-item" href="estado_reclamacion.php">Estado Reclamación</a></li>
@@ -54,6 +55,15 @@
             </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cliente.php">Cliente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="propietario.php">Propietario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="propiedad.php">Propiedad</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.php?action=logout">Cerrar Sesión</a>

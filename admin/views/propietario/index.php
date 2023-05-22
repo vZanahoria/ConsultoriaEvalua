@@ -1,5 +1,5 @@
-<h1 class="text-center">Gestión de Clientes</h1>
-<a href="cliente.php?action=new" class="btn btn-success">Nuevo Cliente</a>
+<h1 class="text-center">Gestión de propietarios</h1>
+<a href="propietario.php?action=new" class="btn btn-success">Nuevo propietario</a>
 <table class="table table-responsive table-bordered">
     <thead>
         <tr>
@@ -14,31 +14,31 @@
         <tbody>
         </tbody>
         <?php $nReg = 0;
-        foreach ($data as $key => $cliente):
+        foreach ($data as $key => $propietario):
             $nReg++; ?>
             <td scope="row">
-                <?php echo $cliente['id_cliente'] ?>
+                <?php echo $propietario['id_propietario'] ?>
             </td>
             <td scope="row">
-                <?php echo $cliente['apellido_paterno'] ?>
+                <?php echo $propietario['apellido_paterno'] ?>
             </td>
             <td scope="row">
-                <?php echo $cliente['apellido_materno'] ?>
+                <?php echo $propietario['apellido_materno'] ?>
             </td>
             <td scope="row">
-                <?php echo $cliente['nombre'] ?>
+                <?php echo $propietario['nombre'] ?>
             </td>
             <td scope="row">
-                <?php echo $cliente['telefono'] ?>
+                <?php echo $propietario['telefono'] ?>
             </td>
             <td scope="row">
-                <?php echo $cliente['correo'] ?>
+                <?php echo $propietario['correo'] ?>
             </td>
             <th>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="cliente.php?action=edit&id=<?php echo $cliente['id_cliente'] ?>" type="button"
+                    <a href="propietario.php?action=edit&id=<?php echo $propietario['id_propietario'] ?>" type="button"
                         class="btn btn-primary">Editar</a>
-                    <a href="cliente.php?action=delete&id=<?php echo $cliente['id_cliente'] ?>" type="button"
+                    <a href="propietario.php?action=delete&id=<?php echo $propietario['id_propietario'] ?>" type="button"
                         class="btn btn-danger">Eliminar</a>
                 </div>
 
