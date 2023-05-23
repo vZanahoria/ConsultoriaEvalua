@@ -85,14 +85,18 @@
     </div>
     <div class="row">
         <div class="col-2">
-            <label for="ubicacion">Ubicacion:</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2">
-            <input required="required" type="text" class="" id="ubicacion" name="data[ubicacion]"
-                value="<?php echo isset($data[0]['ubicacion']) ? $data[0]['ubicacion'] : ''; ?>" minlength="3"
-                maxlength="300">
+            <select name="data[id_propiedad]" required="required">
+                <?php
+                $selected = " ";
+                foreach ($dataPropiedad as $key => $pro):
+                    if ($pro['id_propiedad'] == $data[0]['id_propiedad']):
+                        $selected = "selected";
+                    endif;
+                    ?>
+                    <option value="<?php echo $pro['id_propiedad']; ?>" <?php echo $selected; ?>>
+                        <?php echo $pro['ubicacion']; ?></option>
+                    <?php $selected = " "; endforeach; ?>
+            </select>
         </div>
     </div>
     <div class="row">

@@ -42,7 +42,7 @@ class Avaluo extends Sistema
     {
         $this->db();
         $sql = "INSERT INTO avaluo (valor_reposicion, valor_mercado, observaciones,  id_estado_pago, id_estado_avaluo, id_propiedad, id_valuador) 
-        VALUES (:valor_reposicion, :valor_mercado, :id_estado_pago, :id_estado_avaluo, :id_propiedad, :id_valuador)";
+        VALUES (:valor_reposicion, :valor_mercado, :observaciones, :id_estado_pago, :id_estado_avaluo, :id_propiedad, :id_valuador)";
         $st = $this->db->prepare($sql);
         $st->bindParam(":valor_reposicion", $data['valor_reposicion'], PDO::PARAM_STR);
         $st->bindParam(":valor_mercado", $data['valor_mercado'], PDO::PARAM_STR);

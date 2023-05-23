@@ -12,6 +12,7 @@ $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 
 switch ($action) {
     case 'new':
+        $dataPropiedad = $propiedad->get(null);
         $dataEstadoPago = $estadopago->get(null);
         $dataEstadoAvaluo = $estadoavaluo->get(null);
         $dataValuador = $valuador->get(null);
@@ -43,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $dataPropiedad = $propiedad->get(null);
         $dataEstadoPago = $estadopago->get(null);
         $dataEstadoAvaluo = $estadoavaluo->get(null);
         $dataValuador = $valuador->get(null);
