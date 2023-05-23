@@ -24,7 +24,7 @@
                             </button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-dark" onclick="location.href='../avaluos/Avaluos.php?N=A'">
+                            <button class="btn btn-dark" onclick="location.href='avaluo.php'">
                                 <img src="../images/avaluos.png" width="200px">
                                 </br>
                                 <h4>Avaluos</h4>
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="col">
-                            <button class="btn btn-dark" onclick="location.href='../visita/visitas.php?N=W'">
+                            <button class="btn btn-dark" onclick="location.href='visita.php'">
                                 <img src="../images/visita.png" width="200px">
                                 </br>
                                 <h4>Visitas</h4>
