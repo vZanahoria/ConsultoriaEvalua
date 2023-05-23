@@ -8,8 +8,9 @@ class Propiedad extends Sistema
         $this->db();
         if (is_null($id)) {
             $sql = "select p.id_propiedad, p.ubicacion, p.codigo_postal, l.localidad, tp.tipo_propiedad, cus.clasificacion_uso_suelo,
-            cp.conservacion,
+            cp.conservacion, p2.id_propietario, 
             concat(p2.apellido_paterno, ' ', p2.apellido_materno, ' ', p2.nombre) as propietario,
+            c.id_cliente, 
             concat(c.apellido_paterno, ' ', c.apellido_materno, ' ',c.nombre) as cliente
      from propiedad p left join propietario p2 on p2.id_propietario = p.id_propietario
      left join localidad l on p.id_localidad = l.id_localidad
@@ -21,7 +22,7 @@ class Propiedad extends Sistema
             $st->execute();
             $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
-            $sql = "select select p.id_propiedad, p.ubicacion, p.codigo_postal,l.localidad, tp.tipo_propiedad, cus.clasificacion_uso_suelo,
+            $sql = "select p.id_propiedad, p.ubicacion, p.codigo_postal,l.localidad, tp.tipo_propiedad, cus.clasificacion_uso_suelo,
             cp.conservacion,
             concat(p2.apellido_paterno, ' ', p2.apellido_materno, ' ', p2.nombre) as propietario,
             concat(c.apellido_paterno, ' ', c.apellido_materno, ' ',c.nombre) as cliente

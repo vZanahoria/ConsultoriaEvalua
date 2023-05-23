@@ -4,7 +4,7 @@ class Propietario extends Sistema{
     public function get($id = null){
         $this->db();
         if(is_null($id)){
-            $sql = "select * from propietario";
+            $sql = "select * , concat (apellido_materno, ' ', apellido_paterno, ' ', nombre) as propietario from propietario";
             $st = $this ->db->prepare($sql);
             $st->execute();
             $data = $st->fetchAll();

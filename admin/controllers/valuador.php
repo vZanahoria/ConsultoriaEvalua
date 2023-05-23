@@ -4,13 +4,13 @@ class Valuador extends Sistema{
     public function get($id = null){
         $this->db();
         if(is_null($id)){
-            $sql = "select * from valuador";
+            $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as valuador from valuador";
             $st = $this ->db->prepare($sql);
             $st->execute();
             $data = $st->fetchAll();
         }
         else{
-            $sql = "select * from valuador where id_valuador=:id";
+            $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as valuador where id_valuador=:id";
             $st = $this -> db->prepare($sql);
             $st -> bindParam(":id", $id, PDO::PARAM_INT);
             $st -> execute();

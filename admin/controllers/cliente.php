@@ -4,7 +4,7 @@ class Cliente extends Sistema{
     public function get($id = null){
         $this->db();
         if(is_null($id)){
-            $sql = "select * from cliente";
+            $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as cliente from cliente";
             $st = $this ->db->prepare($sql);
             $st->execute();
             $data = $st->fetchAll();
