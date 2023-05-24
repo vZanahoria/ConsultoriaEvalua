@@ -2,6 +2,8 @@
 include_once("controllers/cliente.php");
 include_once("views/header_admin.php");
 include_once("views/menu_admin.php");
+$nombre_modelo = "Cliente";
+
 $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
