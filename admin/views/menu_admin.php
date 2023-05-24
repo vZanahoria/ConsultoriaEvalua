@@ -32,7 +32,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gestión de Usuarios
+            Usuarios
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="usuario.php">Usuario</a></li>
@@ -45,7 +45,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gestión de Locaciones
+            Locaciones
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="localidad.php">Localidad</a></li>
@@ -56,20 +56,21 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cliente.php">Cliente</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="propietario.php">Propietario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="propiedad.php">Propiedad</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="avaluo.php">Avaluo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="visita.php">Visita</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Avaluos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="cliente.php">Cliente</a></li>
+            <li><a class="dropdown-item" href="propietario.php">Propietario</a></li>
+            <li><a class="dropdown-item" href="propiedad.php">Propiedad</a></li>
+            <li><a class="dropdown-item" href="avaluo.php">Avaluo</a></li>
+            <li><a class="dropdown-item" href="visita.php">Visita</a></li>
+            <li><a class="dropdown-item" href="reclamaciones.php">Reclamaciones</a></li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.php?action=logout">Cerrar Sesión</a>
