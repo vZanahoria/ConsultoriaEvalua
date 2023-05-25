@@ -7,7 +7,7 @@ class Cliente extends Sistema{
             $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as cliente from cliente";
             $st = $this ->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         }
         else{
             $sql = "select * from cliente where id_cliente=:id";

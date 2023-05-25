@@ -9,7 +9,7 @@ class EstadoVisita extends Sistema
             $sql = "select * from estado_visita";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "select * from estado_visita where id_estado_visita=:id";
             $st = $this->db->prepare($sql);

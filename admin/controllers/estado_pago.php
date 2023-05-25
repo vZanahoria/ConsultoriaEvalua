@@ -9,7 +9,7 @@ class EstadoPago extends Sistema
             $sql = "select * from estado_pago";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "select * from estado_pago where id_estado_pago=:id";
             $st = $this->db->prepare($sql);

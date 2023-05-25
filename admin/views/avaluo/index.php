@@ -1,9 +1,17 @@
 <h1 class="text-center">Avaluo</h1>
 <div class="container-fluid">
+
     <div class="row">
         <div class="col-3">
             <p><a class="btn btn-success" href="avaluo.php?action=new" role="button">Ingresar un nuevo avaluo</a>
             </p>
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="col-2">
+            <a class="btn btn-success" target="_blank" href="generarExcel.php?modelo=avaluo" role="button"><i
+                    class="bi bi-file-earmark-spreadsheet"></i>
+                Generar Excel</a>
         </div>
     </div>
 
@@ -54,10 +62,10 @@
                             </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="avaluo.php?action=edit&id=<?php echo $avaluo["id_avaluo"] ?>"
-                                        type="button" class="btn btn-primary">Modificar</a>
-                                    <a href="avaluo.php?action=delete&id=<?php echo $avaluo["id_avaluo"] ?>"
-                                        type="button" class="btn btn-danger">Eliminar</a>
+                                    <a href="avaluo.php?action=edit&id=<?php echo $avaluo["id_avaluo"] ?>" type="button"
+                                        class="btn btn-primary">Modificar</a>
+                                    <a href="avaluo.php?action=delete&id=<?php echo $avaluo["id_avaluo"] ?>" type="button"
+                                        class="btn btn-danger">Eliminar</a>
                                 </div>
                             </td>
                         </tr>

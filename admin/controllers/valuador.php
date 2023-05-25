@@ -7,7 +7,7 @@ class Valuador extends Sistema{
             $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as valuador from valuador";
             $st = $this ->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         }
         else{
             $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as valuador where id_valuador=:id";

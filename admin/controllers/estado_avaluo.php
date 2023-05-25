@@ -9,7 +9,7 @@ class EstadoAvaluo extends Sistema
             $sql = "select * from estado_avaluo";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "select * from estado_avaluo where id_estado_avaluo=:id";
             $st = $this->db->prepare($sql);

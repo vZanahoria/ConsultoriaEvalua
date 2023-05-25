@@ -9,7 +9,7 @@ class ConservacionPropiedad extends Sistema
             $sql = "select * from conservacion_propiedad";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "select * from conservacion_propiedad where id_conservacion=:id";
             $st = $this->db->prepare($sql);

@@ -7,7 +7,7 @@ class Propietario extends Sistema{
             $sql = "select * , concat (apellido_materno, ' ', apellido_paterno, ' ', nombre) as propietario from propietario";
             $st = $this ->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         }
         else{
             $sql = "select * from propietario where id_propietario=:id";

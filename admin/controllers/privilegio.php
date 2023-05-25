@@ -10,7 +10,7 @@ class Privilegio extends Sistema
             $sql = "SELECT * FROM privilegio";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "SELECT * FROM privilegio where id_privilegio=:id";
             $st = $this->db->prepare($sql);

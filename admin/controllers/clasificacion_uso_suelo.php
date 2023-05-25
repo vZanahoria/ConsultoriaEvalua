@@ -9,7 +9,7 @@ class ClasificacionUsoSuelo extends Sistema
             $sql = "select * from clasificacion_uso_suelo";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "select * from clasificacion_uso_suelo where id_clasificacion_uso=:id";
             $st = $this->db->prepare($sql);

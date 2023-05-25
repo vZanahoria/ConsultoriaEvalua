@@ -5,6 +5,13 @@
             <p><a class="btn btn-success" href="visita.php?action=new" role="button">Ingresar una nueva visita</a>
             </p>
         </div>
+        <div class="col-2">
+        </div>
+        <div class="col-2">
+            <a class="btn btn-success" target="_blank" href="generarExcel.php?modelo=visita" role="button"><i
+                    class="bi bi-file-earmark-spreadsheet"></i>
+                Generar Excel</a>
+        </div>
     </div>
 
     <div class="row">
@@ -46,10 +53,10 @@
                             </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="visita.php?action=edit&id=<?php echo $visita["id_visita"] ?>"
-                                        type="button" class="btn btn-primary">Modificar</a>
-                                    <a href="visita.php?action=delete&id=<?php echo $visita["id_visita"] ?>"
-                                        type="button" class="btn btn-danger">Eliminar</a>
+                                    <a href="visita.php?action=edit&id=<?php echo $visita["id_visita"] ?>" type="button"
+                                        class="btn btn-primary">Modificar</a>
+                                    <a href="visita.php?action=delete&id=<?php echo $visita["id_visita"] ?>" type="button"
+                                        class="btn btn-danger">Eliminar</a>
                                 </div>
                             </td>
                         </tr>

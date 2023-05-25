@@ -9,7 +9,7 @@ class EstadoReclamacion extends Sistema
             $sql = "select * from estado_reclamacion";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "select * from estado_reclamacion where id_estado_reclamacion=:id";
             $st = $this->db->prepare($sql);

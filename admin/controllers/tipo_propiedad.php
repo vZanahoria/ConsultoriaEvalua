@@ -9,7 +9,7 @@ class TipoPropiedad extends Sistema
             $sql = "select * from tipo_propiedad";
             $st = $this->db->prepare($sql);
             $st->execute();
-            $data = $st->fetchAll();
+            $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $sql = "select * from tipo_propiedad where id_tipo_propiedad=:id";
             $st = $this->db->prepare($sql);
