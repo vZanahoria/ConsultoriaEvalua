@@ -1,5 +1,6 @@
-<h1 class="text-center">Avaluo</h1>
-<div class="container-fluid">
+<div class="container">
+
+    <h1 class="text-center">Avaluo</h1>
 
     <div class="row">
         <div class="col-3">
@@ -13,13 +14,19 @@
                     class="bi bi-file-earmark-spreadsheet"></i>
                 Generar Excel</a>
         </div>
+        <div class="col-2">
+            <a class="btn btn-danger" target="_blank" href="generarPDF.php?modelo=avaluo" role="button"><i
+                    class="bi bi-filetype-pdf"></i>
+                Generar PDF</a>
+        </div>
+
     </div>
 
     <div class="row">
         <div class="col-12">
-            <table class="table table-responsive table-bordered">
-                <thead>
-                    <tr>
+            <table class="table table-responsive table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr class="table-dark">
                         <th scope="col">#</th>
                         <th scope="col">Valor Reposición</th>
                         <th scope="col">Valor Mercado</th>
@@ -71,7 +78,7 @@
                         </tr>
                     <?php endforeach ?>
                     <tr>
-                        <th>
+                        <th colspan="9">
                             Se encontraron
                             <?php echo $nReg ?> registros.
                         </th>

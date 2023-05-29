@@ -39,11 +39,11 @@
                             </button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-dark" onclick="location.href='../expendiente/expendiente.php?N=L'">
+                            <button class="btn btn-dark" onclick="location.href='reclamaciones.php'">
                                 <img src="../images/expediente.png" width="175px">
                                 </br>
     </br>
-                                <h4>Expedientes</h4>
+                                <h4>Reclamaciones</h4>
                             </button>
                         </div>
 

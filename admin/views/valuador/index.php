@@ -1,15 +1,16 @@
-<h1 class="text-center">Gestión de Valuadores</h1>
-<a href="valuador.php?action=new" class="btn btn-success">Nuevo Valuador</a>
-<table class="table table-responsive table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Apellido Paterno</th>
-            <th scope="col">Apellido Materno</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Teléfono</th>
-            <th scope="col">Opciones</th>
-        </tr>
+<div class="container">
+    <h1 class="text-center">Gestión de Valuadores</h1>
+    <a href="valuador.php?action=new" class="btn btn-success">Nuevo Valuador</a>
+    <table class="table table-responsive table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr class="table-dark">
+                <th scope="col">#</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Opciones</th>
+            </tr>
         <tbody>
         </tbody>
         <?php $nReg = 0;
@@ -42,10 +43,11 @@
             </tr>
         <?php endforeach; ?>
         <tr>
-            <th>
+            <th colspan="6">
                 Se encontraron
                 <?php echo $nReg ?> registros.
             </th>
         </tr>
-    </thead>
-</table>
+        </thead>
+    </table>
+</div>

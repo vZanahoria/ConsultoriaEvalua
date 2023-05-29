@@ -89,6 +89,7 @@ class Avaluo extends Sistema
         $rc = $st->rowCount();
         return $rc;
     }
+
 }
 
 $avaluo = new Avaluo;

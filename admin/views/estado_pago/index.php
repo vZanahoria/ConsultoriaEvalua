@@ -1,8 +1,9 @@
+<div class="container">
 <h1 class="text-center">Gestión Estado Pago</h1>
 <a href="estado_pago.php?action=new" class="btn btn-success">Nuevo</a>
-<table class="table table-responsive table-bordered">
-    <thead>
-        <tr>
+<table class="table table-responsive table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr class="table-dark">
             <th scope="col">#</th>
             <th scope="col">Estado Pago</th>
             <th scope="col">Opciones</th>
@@ -30,10 +31,11 @@
             </tr>
         <?php endforeach; ?>
         <tr>
-            <th>
+            <th colspan="3">
                 Se encontraron
                 <?php echo $nReg ?> registros.
             </th>
         </tr>
     </tbody>
 </table>
+</div>

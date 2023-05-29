@@ -1,5 +1,5 @@
+<div class="container">
 <h1 class="text-center">Usuario</h1>
-<div class="container-fluid">
     <div class="row">
         <div class="col-3">
             <p><a class="btn btn-success" href="usuario.php?action=new" role="button">Ingresar un usuario nuevo</a>
@@ -9,9 +9,9 @@
 
     <div class="row">
         <div class="col-12">
-            <table class="table table-responsive table-bordered">
-                <thead>
-                    <tr>
+            <table class="table table-responsive table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr class=table-dark>
                         <th scope="col">Correo</th>
                         <th scope="col">Operación</th>
                     </tr>
@@ -37,7 +37,7 @@
                         </tr>
                     <?php endforeach ?>
                     <tr>
-                        <th>
+                        <th colspan="2">
                             Se encontraron
                             <?php echo $nReg ?> registros.
                         </th>

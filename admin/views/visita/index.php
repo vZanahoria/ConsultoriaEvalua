@@ -1,5 +1,5 @@
-<h1 class="text-center">Visita</h1>
-<div class="container-fluid">
+<div class="container">
+    <h1 class="text-center">Visita</h1>
     <div class="row">
         <div class="col-3">
             <p><a class="btn btn-success" href="visita.php?action=new" role="button">Ingresar una nueva visita</a>
@@ -16,9 +16,9 @@
 
     <div class="row">
         <div class="col-12">
-            <table class="table table-responsive table-bordered">
-                <thead>
-                    <tr>
+            <table class="table table-responsive table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr class="table-dark">
                         <th scope="col">ID Visita</th>
                         <th scope="col">ID Avaluo</th>
                         <th scope="col">Fecha Visita</th>
@@ -62,7 +62,7 @@
                         </tr>
                     <?php endforeach ?>
                     <tr>
-                        <th>
+                        <th colspan="7">
                             Se encontraron
                             <?php echo $nReg ?> registros.
                         </th>

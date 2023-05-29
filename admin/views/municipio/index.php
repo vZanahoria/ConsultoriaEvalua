@@ -1,5 +1,5 @@
-<h1 class="text-center">Municipio</h1>
-<div class="container-fluid">
+<div class="container">
+    <h1 class="text-center">Municipio</h1>
     <div class="row">
         <div class="col-3">
             <p><a class="btn btn-success" href="municipio.php?action=new" role="button">Ingresar un municipio nuevo</a>
@@ -9,9 +9,9 @@
 
     <div class="row">
         <div class="col-12">
-            <table class="table table-responsive table-bordered">
-                <thead>
-                    <tr>
+            <table class="table table-responsive table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr class="table-dark">
                         <th scope="col">#</th>
                         <th scope="col">Municipio</th>
                         <th scope="col">Estado</th>
@@ -43,7 +43,7 @@
                         </tr>
                     <?php endforeach ?>
                     <tr>
-                        <th>
+                        <th colspan="3">
                             Se encontraron
                             <?php echo $nReg ?> registros.
                         </th>

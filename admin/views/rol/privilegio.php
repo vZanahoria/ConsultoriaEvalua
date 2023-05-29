@@ -1,7 +1,7 @@
-<h1 class="text-center">Privilegios del rol:
-    <?php echo $data[0]['rol']; ?>
-</h1>
-<div class="container-fluid">
+<div class="container">
+    <h1 class="text-center">Privilegios del rol:
+        <?php echo $data[0]['rol']; ?>
+    </h1>
     <div class="row">
         <div class="col-3">
             <p><a class="btn btn-success" href="rol.php?action=newprivilege&id=<?php echo $id ?>" role="button">Agregar
@@ -9,9 +9,9 @@
             </p>
         </div>
     </div>
-    <table class="table table-responsive table-bordered">
-        <thead>
-            <tr>
+    <table class="table table-responsive table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr class="table-dark">
                 <th scope="col" class="col-md-2">Privilegio</th>
                 <th scope="col" class="col-md-2">Opciones</th>
             </tr>
@@ -36,10 +36,11 @@
                 </tr>
             <?php endforeach; ?>
             <tr>
-                <th>
+                <th colspan="2">
                     Se encontraron
                     <?php echo $nReg ?> registros.
                 </th>
             </tr>
         </tbody>
     </table>
+</div>

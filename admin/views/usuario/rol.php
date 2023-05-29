@@ -1,3 +1,4 @@
+<div class="container">
 <h1 class="text-center">Roles del usuario:
     <?php echo $data[0]['correo']; ?>
 </h1>
@@ -9,9 +10,9 @@
             </p>
         </div>
     </div>
-    <table class="table table-responsive table-bordered">
-        <thead>
-            <tr>
+    <table class="table table-responsive table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr class="table-dark">
                 <th scope="col" class="col-md-2">Rol</th>
                 <th scope="col" class="col-md-2">Opciones</th>
             </tr>
@@ -36,10 +37,11 @@
                 </tr>
             <?php endforeach; ?>
             <tr>
-                <th>
+                <th colspan="2">
                     Se encontraron
                     <?php echo $nReg ?> registros.
                 </th>
             </tr>
         </tbody>
     </table>
+</div>

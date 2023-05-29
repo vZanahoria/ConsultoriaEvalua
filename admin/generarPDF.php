@@ -7,9 +7,9 @@ date_default_timezone_set('America/Mexico_City');
 $pdf = new \Mpdf\Mpdf();
 
 $stylesheet = file_get_contents('style.css');
-$pdf->SetTitle('THE CONSTRUCTOR|PROJECT REPORT|'.date('d/m/Y H:i:s'));
-$pdf->SetHeader('THE CONSTRUCTOR|PROJECT REPORT|{DATE j/m/Y}');
-$pdf->SetWatermarkText('THE CONSTRUCTOR');
+$pdf->SetTitle('ConsultoriaEvalua|Reporte|' . date('d/m/Y H:i:s'));
+$pdf->SetHeader('ConsultoriaEvalua|Reporte|{DATE j/m/Y}');
+$pdf->SetWatermarkText('ConsultoriaEvalua');
 $pdf->showWatermarkText = true;
 $pdf->watermarkTextAlpha = 0.1;
 
@@ -20,39 +20,40 @@ $pdf->defaultfooterfontsize = 10;
 $pdf->defaultfooterfontstyle = 'BI';
 $pdf->defaultfooterline = 0;
 
-$pdf->SetFooter('THE CONSTRUCTOR|PROJECT REPORT|{PAGENO}');
+$pdf->SetFooter('ConsultoriaEvalua|Reporte|{PAGENO}');
 
 $sistema->db();
 
-$action = (isset($_GET["action"])) ? $_GET["action"] : null;
-$id_proyecto = (isset($_GET["id"])) ? $_GET["id"] : null;
+$modelo = (isset($_GET["modelo"])) ? $_GET["modelo"] : null;
 
 
-switch ($action):
-    case 'proyecto':
-        $sql = "SELECT * FROM vw_proyecto WHERE id_proyecto=:id_proyecto";
+switch ($modelo):
+    case 'avaluo':
+        $sql = "SELECT * FROM vw_avaluo";
         $st = $sistema->db->prepare($sql);
-        $st->bindParam(':id_proyecto', $id_proyecto, PDO::PARAM_INT);
         $st->execute();
         $data = $st->fetchAll(PDO::FETCH_ASSOC);
-        $html = '<img src="../images/logo.jpg" style="height: 200px" />';
-        $html .= '<h5 align="right">Dependencia: THE CONSTRUCTOR</h5>';
+        $html = '<img src="../images/logo.png" style="height: 200px" />';
+        $html .= '<h5 align="right">ConsultoriaEvalua</h5>';
         $html .= '<h5 align="right">Clave: 00000000</h5>';
-        $html .= '<h5 align="right">Asunto: ' . 'Reporte De Proyecto' . '</h5>';
+        $html .= '<h5 align="right">Asunto: ' . 'Reporte De Avaluo' . '</h5>';
         $html .= '<h5 align="right">Fecha: ' . date('d/m/Y H:i:s') . '</h5>';
-        $html .= '<h1>Departamento: <strong>' . $data[0]['departamento'] . '</strong></h1>';
-        $html .= '<h2>Proyecto: <strong>' . $data[0]['proyecto'] . '</strong></h2>';
+        $html .= '<h1>Rporte: <strong> Avaluo' . '</strong></h1>';
         $html .= '<p>&nbsp;</p>';
-        $html .= '<h3>Descripción: <h4><em>' . $data[0]['descripcion'] . '</em></h4></h3>';
-        $html .= '<h4>Inicio Del Proyecto: <strong>' . date_format(date_create($data[0]['fecha_inicio']), 'd/m/Y') . '</strong></h4>';
-        $html .= '<h4>Fin Del Proyecto: <strong>' . date_format(date_create($data[0]['fecha_fin']), 'd/m/Y') . '</strong></h4>';
+        $html .= '<h3>Descripción: <h4><em> El presente informe de avalúos ha sido elaborado con el objetivo de proporcionar una valoración precisa y objetiva de la propiedad en cuestión. Este reporte se basa en una exhaustiva evaluación realizada por expertos en la materia, quienes han utilizado métodos y criterios reconocidos internacionalmente para determinar el valor de mercado del inmueble.'. '</em></h4></h3>';
         $html .= '<p>&nbsp;</p>';
         $html .= '<table class=" table table-bordered">
         <thead>
           <tr>
-            <th scope="col">Número</th>
-            <th scope="col">Tarea</th>
-            <th scope="col">Avance</th>
+            <th scope="col">ID</th>
+            <th scope="col">Valor Reposición</th>
+            <th scope="col">Valor Mercado</th>
+            <th scope="col">Observaciones</th>
+            <th scope="col">Estado Pago</th>
+            <th scope="col">Estado Avaluo</th>
+            <th scope="col">ID P</th>
+            <th scope="col">Ubicacion</th>
+            <th scope="col">Valuador</th>
           </tr>
         </thead>
         <tbody>';
@@ -61,12 +62,17 @@ switch ($action):
         foreach ($data as $key => $info):
             $i++;
             $html .= '<tr>';
-            $html .= '<td>' . $i . '</td>';
+            $html .= '<td>' . $info['id_avaluo'] . '</td>';
             $html .= '<td>' . $info['tarea'] . '</td>';
-            $html .= '<td>' . $info['avance'] . '%</td></br>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                <progress value="' . $info['avance'] . '" max="100"></progress>
-            </div>';
+            $html .= '<td>' . $info['valor_mercado'] . '</td>';
+            $html .= '<td>' . $info['valor_reposicion'] . '</td>';
+            $html .= '<td>' . $info['observaciones'] . '</td>';
+            $html .= '<td>' . $info['estado_pago'] . '</td>';
+            $html .= '<td>' . $info['estado_avaluo'] . '</td>';
+            $html .= '<td>' . $info['id_propiedad'] . '</td>';
+            $html .= '<td>' . $info['ubicacion'] . '</td>';
+            $html .= '<td>' . $info['valuador'] . '</td>';
+
             $html .= '</tr>';
         endforeach;
 
