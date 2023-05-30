@@ -13,6 +13,11 @@
                     class="bi bi-file-earmark-spreadsheet"></i>
                 Generar Excel</a>
         </div>
+        <div class="col-2">
+            <a class="btn btn-danger" target="_blank" href="generarPDF.php?modelo=propiedad" role="button"><i
+                    class="bi bi-filetype-pdf"></i>
+                Generar PDF</a>
+        </div>
     </div>
 
     <div class="row">

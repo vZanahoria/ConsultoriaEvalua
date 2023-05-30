@@ -2,8 +2,8 @@
 <form method="POST" action="conservacion_propiedad.php?action=<?php echo $action; ?>">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Conservación Propiedad:</label>
-        <input type="text" name="data[conservacion_propiedad]" class="form-control" placeholder="Conservación Propiedad"
-            value="<?php echo isset($data[0]['conservacion_propiedad']) ? $data[0]['conservacion_propiedad'] : ''; ?>" />
+        <input type="text" name="data[conservacion]" class="form-control" placeholder="Conservación Propiedad"
+            value="<?php echo isset($data[0]['conservacion']) ? $data[0]['conservacion'] : ''; ?>" />
     </div>
     <div class="mb-3">
         <?

@@ -24,7 +24,7 @@
                 <a class="nav-link " href="contacto.html">Inicio</a>
               </li>
               <li class="nav-item px-5">
-                <a class="nav-link " href="contacto.html">Contacto</a>
+                <a class="nav-link " href="contacto.php">Contacto</a>
               </li>
               <li class="nav-item px-5">
                 <a class="nav-link " href="idioma.html">Ubicación</a>

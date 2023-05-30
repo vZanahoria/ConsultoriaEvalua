@@ -10,7 +10,7 @@ class Valuador extends Sistema{
             $data = $st->fetchAll(PDO::FETCH_ASSOC);
         }
         else{
-            $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as valuador where id_valuador=:id";
+            $sql = "select *, concat(apellido_paterno, ' ', apellido_materno, ' ', nombre) as valuador from valuador where id_valuador=:id";
             $st = $this -> db->prepare($sql);
             $st -> bindParam(":id", $id, PDO::PARAM_INT);
             $st -> execute();
@@ -37,6 +37,9 @@ class Valuador extends Sistema{
 
     public function delete($id){
         $this->db();
+       /* $sqluser = "select id_usuario from valuador where id_valuador=:id";
+        $stuser = $this ->db->prepare($sqluser);
+        $stuser -> bindParam(":id", $id, PDO::PARAM_INT);*/
         $sql = "DELETE from valuador WHERE id_valuador=:id";
         $st = $this ->db->prepare($sql);
         $st->bindParam(":id", $id, PDO::PARAM_INT);

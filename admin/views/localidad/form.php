@@ -1,13 +1,22 @@
 <h1><?php echo ($action == 'edit')?'Modificar':'Nuevo' ;?> Localidad</h1>
 <form method="POST" action="localidad.php?action=<?php echo $action; ?>">
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Localidad:</label>
-        <input type="text" name="data[localidad]" class="form-control" placeholder="Localidad"
-            value="<?php echo isset($data[0]['localidad']) ? $data[0]['localidad'] : ''; ?>" />
+<div class="row">
+        <div class="col-2">
+            <label for="localidad">Localidad:</label>
+        </div>
     </div>
     <div class="row">
         <div class="col-2">
-            <label for="id_municipio">Municipio:</label>
+            <input required="required" type="text" class="" id="localidad" name="data[localidad]"
+                value="<?php echo isset($data[0]['localidad']) ? $data[0]['localidad'] : ''; ?>" minlength="3"
+                maxlength="200">
+        </div>
+    </div>
+    <?php
+    ?>
+    <div class="row">
+        <div class="col-2">
+            <label for="municipio">Municipio:</label>
         </div>
     </div>
     <div class="row">

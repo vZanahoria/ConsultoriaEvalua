@@ -7,15 +7,15 @@ class Localidad extends Sistema
     {
         $this->db();
         if (is_null($id)) {
-            $sql = "select l.localidad, l.id_localidad, m.municipio from municipio as m right join localidad l
+            $sql = "select l.localidad, l.id_localidad, m.id_municipio, m.municipio from municipio as m right join localidad l
             on m.id_municipio = l.id_municipio order by l.id_localidad;";
             $st = $this->db->prepare($sql);
             $st->execute();
             $data = $st->fetchAll(PDO::FETCH_ASSOC);
         } else {
-            $sql = "select l.localidad, l.id_localidad, m.municipio from municipio as m right join localidad l
+            $sql = "select l.localidad, l.id_localidad, m.id_municipio, m.municipio from municipio as m right join localidad l
             on m.id_municipio = l.id_municipio 
-            where m.id_municipio=:id order by l.id_localidad;";
+            where l.id_localidad=:id order by l.id_localidad;";
             $st = $this->db->prepare($sql);
             $st->bindParam(":id", $id, PDO::PARAM_INT);
             $st->execute();

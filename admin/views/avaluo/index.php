@@ -7,7 +7,11 @@
             <p><a class="btn btn-success" href="avaluo.php?action=new" role="button">Ingresar un nuevo avaluo</a>
             </p>
         </div>
+
         <div class="col-2">
+            <a class="btn btn-success" target="_blank" href="avaluo.php?action=grafica" role="button"><i
+                    class="bi bi-bar-chart-fill"></i>
+                Grafica</a>
         </div>
         <div class="col-2">
             <a class="btn btn-success" target="_blank" href="generarExcel.php?modelo=avaluo" role="button"><i
@@ -88,4 +92,13 @@
 
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
+
 </div>

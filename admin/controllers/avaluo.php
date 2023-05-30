@@ -89,6 +89,19 @@ class Avaluo extends Sistema
         $rc = $st->rowCount();
         return $rc;
     }
+    public function chartAvaluoCompleto()
+    {
+        $this->db();
+        $sql = "select
+        COUNT(case when id_estado_pago = 1 then 1 end) AS pagado,
+        COUNT(case when id_estado_pago = 2 then 2 end) AS pendiente_pago
+        from avaluo;";
+        $st = $this->db->prepare($sql);
+        $st->execute();
+        $data = $st->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
 
 }
 

@@ -6,6 +6,7 @@
             <tr class="table-dark">
                 <th scope="col">#</th>
                 <th scope="col">Localidad</th>
+                <th scope="col">Municipio</th>
                 <th scope="col">Opciones</th>
             </tr>
         </thead>
@@ -19,6 +20,9 @@
                     </td>
                     <td scope="row">
                         <?php echo $localidad["localidad"] ?>
+                    </td>
+                    <td scope="row">
+                        <?php echo $localidad["municipio"] ?>
                     </td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">

@@ -66,6 +66,9 @@ switch ($action) {
             include('views/avaluo/form.php');
         }
         break;
+    case 'grafica':
+        include("views/avaluo/grafica.php");
+        break;
     case 'getAll':
     default:
         $data = $avaluo->get(null);
