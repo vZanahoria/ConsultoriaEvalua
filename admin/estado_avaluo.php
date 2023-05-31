@@ -7,6 +7,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $estadoavaluo->validatePrivilegio('Conservacion Propiedad Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $estadoavaluo->new($data);
@@ -23,6 +24,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $estadoavaluo->validatePrivilegio('Conservacion Propiedad Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_estado_avaluo'];
@@ -42,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $estadoavaluo->validatePrivilegio('Conservacion Propiedad Eliminar');
         $cantidad = $estadoavaluo->delete($id);
         if ($cantidad) {
             $estadoavaluo->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +58,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $estadoavaluo->validatePrivilegio('Conservacion Propiedad Leer');
         $data = $estadoavaluo->get(null);
         include("views/estado_avaluo/index.php");
         break;

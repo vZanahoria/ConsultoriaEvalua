@@ -1,11 +1,6 @@
 <div class="container">
 <h1 class="text-center">Usuario</h1>
     <div class="row">
-        <div class="col-3">
-            <p><a class="btn btn-success" href="usuario.php?action=new" role="button">Ingresar un usuario nuevo</a>
-            </p>
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-12">

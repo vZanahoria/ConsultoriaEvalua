@@ -37,9 +37,9 @@ class Valuador extends Sistema{
 
     public function delete($id){
         $this->db();
-       /* $sqluser = "select id_usuario from valuador where id_valuador=:id";
+        $sqluser = "select id_usuario from valuador where id_valuador=:id";
         $stuser = $this ->db->prepare($sqluser);
-        $stuser -> bindParam(":id", $id, PDO::PARAM_INT);*/
+        $stuser -> bindParam(":id", $id, PDO::PARAM_INT);
         $sql = "DELETE from valuador WHERE id_valuador=:id";
         $st = $this ->db->prepare($sql);
         $st->bindParam(":id", $id, PDO::PARAM_INT);
@@ -64,6 +64,17 @@ class Valuador extends Sistema{
 
         $rc = $st->rowCount();
         return $rc;
+    }
+    public function guardarFoto($imagen, $id)
+    {
+        $this->db();
+        $sql = "update valuador set foto = :imagen WHERE id_valuador=:id";
+        $st = $this->db->prepare($sql);
+        $st->bindParam(":imagen", $imagen, PDO::PARAM_LOB);
+        $st->bindParam(":id", $id, PDO::PARAM_INT);
+        $st->execute();
+        $data = $st->rowCount();
+        return $data;
     }
 }
 $valuador = new Valuador;

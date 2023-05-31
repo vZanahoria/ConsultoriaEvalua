@@ -25,9 +25,6 @@
             <li><a class="dropdown-item" href="naturaleza_reclamacion.php">Naturaleza Reclamación</a></li>
             <li><a class="dropdown-item" href="tipo_propiedad.php">Tipo Propiedad </a></li>
             <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -38,9 +35,7 @@
             <li><a class="dropdown-item" href="usuario.php">Usuario</a></li>
             <li><a class="dropdown-item" href="rol.php">Rol</a></li>
             <li><a class="dropdown-item" href="privilegio.php">Privilegio</a></li>
-              <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -51,9 +46,7 @@
             <li><a class="dropdown-item" href="localidad.php">Localidad</a></li>
             <li><a class="dropdown-item" href="municipio.php">Municipio</a></li>
             <li><a class="dropdown-item" href="estado.php">Estado</a></li>
-              <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -67,19 +60,12 @@
             <li><a class="dropdown-item" href="avaluo.php">Avaluo</a></li>
             <li><a class="dropdown-item" href="visita.php">Visita</a></li>
             <li><a class="dropdown-item" href="reclamaciones.php">Reclamaciones</a></li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.php?action=logout">Cerrar Sesión</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

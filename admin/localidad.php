@@ -8,6 +8,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $localidad->validatePrivilegio('Localidad Crear');
         $dataMunicipios = $municipio->get(null);
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
@@ -25,6 +26,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $localidad->validatePrivilegio('Localidad Actualizar');
         $dataMunicipios = $municipio->get(null);
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
@@ -45,6 +47,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $localidad->validatePrivilegio('Localidad Eliminar');
         $cantidad = $localidad->delete($id);
         if ($cantidad) {
             $localidad->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -58,6 +61,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $localidad->validatePrivilegio('Localidad Leer');
         $data = $localidad->get(null);
         include("views/localidad/index.php");
         break;

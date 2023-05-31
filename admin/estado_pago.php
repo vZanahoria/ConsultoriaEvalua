@@ -7,6 +7,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $estadopago->validatePrivilegio('Estado Pago Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $estadopago->new($data);
@@ -23,6 +24,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $estadopago->validatePrivilegio('Estado Pago Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_estado_pago'];
@@ -42,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $estadopago->validatePrivilegio('Estado Pago Eliminar');
         $cantidad = $estadopago->delete($id);
         if ($cantidad) {
             $estadopago->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +58,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $estadopago->validatePrivilegio('Estado Pago Leer');
         $data = $estadopago->get(null);
         include("views/estado_pago/index.php");
         break;

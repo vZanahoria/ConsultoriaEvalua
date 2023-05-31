@@ -7,6 +7,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $tipopropiedad->validatePrivilegio('Tipo Propiedad Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $tipopropiedad->new($data);
@@ -23,6 +24,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $tipopropiedad->validatePrivilegio('Tipo Propiedad Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_tipo_propiedad'];
@@ -42,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $tipopropiedad->validatePrivilegio('Tipo Propiedad Eliminar');
         $cantidad = $tipopropiedad->delete($id);
         if ($cantidad) {
             $tipopropiedad->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +58,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $tipopropiedad->validatePrivilegio('Tipo Propiedad Leer');
         $data = $tipopropiedad->get(null);
         include("views/tipo_propiedad/index.php");
         break;

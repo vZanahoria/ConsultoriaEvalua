@@ -9,6 +9,7 @@ $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 
 switch ($action) {
     case 'new':
+        $municipio->validatePrivilegio('Municipio Crear');
         $dataEstados = $estado->get(null);
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
@@ -26,6 +27,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $municipio->validatePrivilegio('Municipio Eliminar');
         $cantidad = $municipio->delete($id);
         if ($cantidad) {
             $municipio->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -38,6 +40,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $municipio->validatePrivilegio('Municipio Actualizar');
         $dataEstados = $estado->get(null);
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
@@ -59,7 +62,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
-
+    $municipio->validatePrivilegio('Municipio Leer');
         $data = $municipio->get(null);
         include("views/municipio/index.php");
 }

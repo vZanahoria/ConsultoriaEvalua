@@ -3,7 +3,7 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-require_once('config.php');
+require_once(__DIR__.'/../config.php');
 class Sistema{
     var $db = null;
     public function db(){

@@ -5,7 +5,25 @@ include_once("views/menu_admin.php");
 $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
+    case 'foto':
+        $valuador->validatePrivilegio('Valuador Actualizar');
+
+        if (isset($_POST['save'])) {
+            $img = $_POST['image'];
+            $flag = $valuador->guardarFoto($img, $id);
+            if ($flag) {
+                $valuador->flash('success', 'Se cargo la foto correctamente');
+            } else {
+                $valuador->flash('danger', 'No se cargo la foto');
+            }
+            $data = $valuador->get();
+            include('views/valuador/index.php');
+        } else {
+            include('views/valuador/foto.php');
+        }
+        break;
     case 'new':
+        $valuador->validatePrivilegio('Valuador Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $valuador->new($data);
@@ -22,6 +40,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $valuador->validatePrivilegio('Valuador Eliminar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_valuador'];
@@ -42,6 +61,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $valuador->validatePrivilegio('Valuador Leer');
         $data = $valuador->get(null);
         include("views/valuador/index.php");
         break;

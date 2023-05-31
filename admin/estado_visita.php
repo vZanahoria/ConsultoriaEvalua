@@ -7,6 +7,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $estadovisita->validatePrivilegio('Estado Visita Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $estadovisita->new($data);
@@ -23,6 +24,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $estadovisita->validatePrivilegio('Estado Visita Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_estado_visita'];
@@ -42,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $estadovisita->validatePrivilegio('Estado Visita Eliminar');
         $cantidad = $estadovisita->delete($id);
         if ($cantidad) {
             $estadovisita->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +58,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $estadovisita->validatePrivilegio('Estado Visita Leer');
         $data = $estadovisita->get(null);
         include("views/estado_visita/index.php");
         break;

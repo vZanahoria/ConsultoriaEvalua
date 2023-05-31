@@ -7,6 +7,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $estadoreclamacion->validatePrivilegio('Estado Reclamacion Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $estadoreclamacion->new($data);
@@ -23,6 +24,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $estadoreclamacion->validatePrivilegio('Estado Reclamacion Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_estado_reclamacion'];
@@ -42,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $estadoreclamacion->validatePrivilegio('Estado Reclamacion Eliminar');
         $cantidad = $estadoreclamacion->delete($id);
         if ($cantidad) {
             $estadoreclamacion->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +58,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $estadoreclamacion->validatePrivilegio('Estado Reclamacion Leer');
         $data = $estadoreclamacion->get(null);
         include("views/estado_reclamacion/index.php");
         break;

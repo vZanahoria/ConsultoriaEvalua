@@ -5,6 +5,7 @@
         <thead class="thead-dark">
             <tr class="table-dark">
                 <th scope="col">#</th>
+                <th scope="col">Foto</th>
                 <th scope="col">Apellido Paterno</th>
                 <th scope="col">Apellido Materno</th>
                 <th scope="col">Nombre</th>
@@ -16,8 +17,12 @@
         <?php $nReg = 0;
         foreach ($data as $key => $valuador):
             $nReg++; ?>
+            
             <td scope="row">
                 <?php echo $valuador['id_valuador'] ?>
+            </td>
+            <td>
+                <?php echo (isset($empleado['foto'])) ? '<img width="100px" src="' . $empleado['foto'] . '"/>' : ""; ?>
             </td>
             <td scope="row">
                 <?php echo $valuador['apellido_paterno'] ?>
@@ -32,11 +37,12 @@
                 <?php echo $valuador['telefono'] ?>
             </td>
             <th>
+                
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="valuador.php?action=edit&id=<?php echo $valuador['id_valuador'] ?>" type="button"
+                <a href="valuador.php?action=foto&id=<?php echo $valuador["id_valuador"] ?>"
+                                        type="button" class="btn btn-dark">Foto</a>    
+                <a href="valuador.php?action=edit&id=<?php echo $valuador['id_valuador'] ?>" type="button"
                         class="btn btn-primary">Editar</a>
-                    <a href="valuador.php?action=delete&id=<?php echo $valuador['id_valuador'] ?>" type="button"
-                        class="btn btn-danger">Eliminar</a>
                 </div>
 
             </th>

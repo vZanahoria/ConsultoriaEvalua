@@ -7,6 +7,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $conservacionpropiedad->validatePrivilegio('Conservacion Propiedad Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $conservacionpropiedad->new($data);
@@ -23,6 +24,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $conservacionpropiedad->validatePrivilegio('Conservacion Propiedad Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_conservacion'];
@@ -42,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $conservacionpropiedad->validatePrivilegio('Conservacion Propiedad Eliminar');
         $cantidad = $conservacionpropiedad->delete($id);
         if ($cantidad) {
             $conservacionpropiedad->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +58,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $conservacionpropiedad->validatePrivilegio('Conservacion Propiedad Leer');
         $data = $conservacionpropiedad->get(null);
         include("views/conservacion_propiedad/index.php");
         break;

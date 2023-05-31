@@ -7,6 +7,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $naturaleza->validatePrivilegio('Naturaleza Reclamacion Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $naturaleza->new($data);
@@ -23,6 +24,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $naturaleza->validatePrivilegio('Naturaleza Reclamacion Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_naturaleza'];
@@ -42,6 +44,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $naturaleza->validatePrivilegio('Naturaleza Reclamacion Eliminar');
         $cantidad = $naturaleza->delete($id);
         if ($cantidad) {
             $naturaleza->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -55,6 +58,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $naturaleza->validatePrivilegio('Naturaleza Reclamacion Leer');
         $data = $naturaleza->get(null);
         include("views/naturaleza_reclamacion/index.php");
         break;
