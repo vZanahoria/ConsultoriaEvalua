@@ -8,6 +8,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : "getAll";
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
+        $cliente->validatePrivilegio('Cliente Crear');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $cantidad = $cliente->new($data);
@@ -24,6 +25,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $cliente->validatePrivilegio('Cliente Actualizar');
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_cliente'];
@@ -43,6 +45,7 @@ switch ($action) {
         }
         break;
         case 'delete':
+            $cliente->validatePrivilegio('Cliente Eliminar');
             $cantidad = $cliente->delete($id);
             if ($cantidad) {
                 $cliente->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -56,6 +59,7 @@ switch ($action) {
             break;
     case 'getAll':
     default:
+    $cliente->validatePrivilegio('Cliente Leer');
         $data = $cliente->get(null);
         include("views/cliente/index.php");
         break;

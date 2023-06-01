@@ -12,6 +12,7 @@ $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 
 switch ($action) {
     case 'new':
+        $avaluo->validatePrivilegio('Avaluo Crear');
         $dataPropiedad = $propiedad->get(null);
         $dataEstadoPago = $estadopago->get(null);
         $dataEstadoAvaluo = $estadoavaluo->get(null);
@@ -32,6 +33,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $avaluo->validatePrivilegio('Avaluo Eliminar');
         $cantidad = $avaluo->delete($id);
         if ($cantidad) {
             $avaluo->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -44,6 +46,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $avaluo->validatePrivilegio('Avaluo Actualizar');
         $dataPropiedad = $propiedad->get(null);
         $dataEstadoPago = $estadopago->get(null);
         $dataEstadoAvaluo = $estadoavaluo->get(null);
@@ -71,6 +74,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $avaluo->validatePrivilegio('Avaluo Leer');
         $data = $avaluo->get(null);
         include("views/avaluo/index.php");
 }

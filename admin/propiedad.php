@@ -14,6 +14,7 @@ $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 
 switch ($action) {
     case 'new':
+        $propiedad->validatePrivilegio('Propiedad Crear');
         $dataLocalidad = $localidad->get(null);
         $dataTipoPropiedad = $tipopropiedad->get(null);
         $dataClasificacionUso = $usosuelo->get(null);
@@ -36,6 +37,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $propiedad->validatePrivilegio('Propiedad Eliminar');
         $cantidad = $propiedad->delete($id);
         if ($cantidad) {
             $propiedad->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -48,6 +50,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $propiedad->validatePrivilegio('Propiedad Actualizar');
         $dataLocalidad = $localidad->get(null);
         $dataTipoPropiedad = $tipopropiedad->get(null);
         $dataClasificacionUso = $usosuelo->get(null);
@@ -74,6 +77,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $propiedad->validatePrivilegio('Propiedad Leer');
         $data = $propiedad->get(null);
         include("views/propiedad/index.php");
 }

@@ -12,6 +12,7 @@ $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 
 switch ($action) {
     case 'new':
+        $visita->validatePrivilegio('Visita Crear');
         $dataPropiedad = $propiedad->get(null);
         $dataEstadoVisita = $estadovisita->get(null);
         $dataAvaluo = $avaluo->get(null);
@@ -32,6 +33,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $visita->validatePrivilegio('Visita Eliminar');
         $cantidad = $visita->delete($id);
         if ($cantidad) {
             $visita->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -44,6 +46,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $visita->validatePrivilegio('Visita Actualizar');
         $dataPropiedad = $propiedad->get(null);
         $dataEstadoVisita = $estadovisita->get(null);
         $dataAvaluo = $avaluo->get(null);
@@ -68,6 +71,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $visita->validatePrivilegio('Visita Leer');
         $data = $visita->get(null);
         include("views/visita/index.php");
 }

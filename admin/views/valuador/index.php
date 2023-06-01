@@ -22,7 +22,7 @@
                 <?php echo $valuador['id_valuador'] ?>
             </td>
             <td>
-                <?php echo (isset($empleado['foto'])) ? '<img width="100px" src="' . $empleado['foto'] . '"/>' : ""; ?>
+                <?php echo (isset($valuador['foto'])) ? '<img width="100px" src="' . $valuador['foto'] . '"/>' : ""; ?>
             </td>
             <td scope="row">
                 <?php echo $valuador['apellido_paterno'] ?>
@@ -49,7 +49,7 @@
             </tr>
         <?php endforeach; ?>
         <tr>
-            <th colspan="6">
+            <th colspan="7">
                 Se encontraron
                 <?php echo $nReg ?> registros.
             </th>

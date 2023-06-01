@@ -12,6 +12,7 @@ $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 
 switch ($action) {
     case 'new':
+        $reclamaciones->validatePrivilegio('Reclamaciones Crear');
         $dataNaturalezaReclamacion = $naturaleza->get(null);
         $dataEstadoReclamaciones = $estadoreclamacion->get(null);
         $dataAvaluo = $avaluo->get(null);
@@ -32,6 +33,7 @@ switch ($action) {
         }
         break;
     case 'delete':
+        $reclamaciones->validatePrivilegio('Reclamaciones Eliminar');
         $cantidad = $reclamaciones->delete($id);
         if ($cantidad) {
             $reclamaciones->flash('success', 'Registro con el id= ' . $id . ' eliminado con éxito');
@@ -44,6 +46,7 @@ switch ($action) {
         }
         break;
     case 'edit':
+        $reclamaciones->validatePrivilegio('Reclamaciones Actualizar');
         $dataNaturalezaReclamacion = $naturaleza->get(null);
         $dataEstadoReclamaciones = $estadoreclamacion->get(null);
         $dataAvaluo = $avaluo->get(null);
@@ -68,6 +71,7 @@ switch ($action) {
         break;
     case 'getAll':
     default:
+    $reclamaciones->validatePrivilegio('Reclamaciones Leer');
         $data = $reclamaciones->get(null);
         include("views/reclamaciones/index.php");
 }
