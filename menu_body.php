@@ -41,7 +41,7 @@
 
       <div class="box">
         <div class="card text-center card-style-home shadow-lg p-3 mb-5 bg-white rounded">
-          <img src="images/entrega.png" alt="Entrega con el cliente">
+          <img src="images/entrega_trabajo.jpg" alt="Entrega con el cliente">
           <div class="card-body">
             <h4 class="card-title">Entrega</h4>
             <p class="card-text">Estamos completamente comprometidos en brindar servicios de alta calidad a nuestros
@@ -53,7 +53,7 @@
       <div class="box">
 
         <div class="card text-center card-style-home shadow-lg p-3 mb-5 bg-white rounded">
-          <img src="images/experiencia.png" alt="Experiencia en el campo">
+          <img src="images/experiencia_trabajo.png" alt="Experiencia en el campo">
           <div class="card-body">
             <h4 class="card-title">Experiencia</h4>
             <p class="card-text">Nos respalda una amplia trayectoria en el campo de las bienes raíces, inmuebles y
@@ -64,7 +64,7 @@
       </div>
       <div class="box">
         <div class="card text-center card-style-home shadow-lg p-3 mb-5 bg-white rounded">
-          <img src="images/pasion.png" alt="Pasión por nuestro trabajo">
+          <img src="images/pasion_trabajo.jpg" alt="Pasión por nuestro trabajo">
           <div class="card-body">
             <h4 class="card-title">Pasión</h4>
             <p class="card-text">Damos todo de nosotras en cada asesoría, ya que amamos lo que hacemos.
