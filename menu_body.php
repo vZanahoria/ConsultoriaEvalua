@@ -92,7 +92,7 @@
         <h3>Uno de nuestros expertos responderá tus preguntas y estará asesorándote en todo el proceso.</h3>
         <h2>&nbsp;</h2>
         <div class="btn-contacto">
-          <a href="#" class="btn btn-success btn-lg active btn_contacto" role="button" aria-pressed="true">Contacto</a>
+          <a href="contacto.php" class="btn btn-success btn-lg active btn_contacto" role="button" aria-pressed="true">Contacto</a>
 
         </div>
 
